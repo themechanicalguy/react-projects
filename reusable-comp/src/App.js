@@ -1,30 +1,28 @@
-import Accordion from "./components/Accordion";
+import Dropdown from "./components/Dropdown";
+import React, { useState } from "react";
 
 function App() {
-  const items = [
+  const [selection, setselection] = useState(null);
+  const setOption = (option) => {
+    setselection(option);
+  };
+  const options = [
     {
-      id: "1",
-      label: "Learn JavaScript in 10 days",
-      content:
-        "JavaScript is not that easy to learn in 10 days Irure consectetur commodo elit officia id. Dolore reprehenderit commodo ea laboris cupidatat ullamco non deserunt Lorem labore mollit dolor et anim. Id sunt elit duis eiusmod dolore laboris. Tempor duis velit deserunt ad excepteur Lorem. Commodo quis consequat amet consequat adipisicing cupidatat elit do Lorem aliquip deserunt deserunt eu. Pariatur esse ad exercitation eu fugiat minim incididunt. Fugiat consequat aliquip est anim anim ex incididunt dolor est ea non laboris pariatur nulla.",
+      label: "Red",
+      value: "red",
     },
     {
-      id: "2",
-      label: "Learn React in 100 days",
-      content:
-        "React is easy to learn in 100 days Minim eu dolor elit sint exercitation. Nulla voluptate ut cupidatat commodo incididunt tempor elit laborum. Laboris Lorem qui duis excepteur reprehenderit deserunt magna magna magna nulla. Commodo fugiat sunt nulla esse consequat duis proident Lorem id. Cillum adipisicing magna ipsum laborum laboris velit anim.",
+      label: "Green",
+      value: "green",
     },
     {
-      id: "3",
-      label: "Learn HTML in 10 days",
-      content:
-        "Ok then do it  loremCillum est eiusmod commodo nostrud laborum aliqua magna adipisicing. Quis commodo dolore ipsum sint culpa velit aliqua deserunt. Nisi ex eu veniam culpa cupidatat anim consectetur. Id irure ut elit labore nisi enim minim sit aliquip sunt laboris nisi aliquip laboris. Proident aliqua duis commodo proident proident deserunt commodo consequat proident amet. Eu nisi proident anim sit enim ex minim anim do Lorem anim et. Excepteur cillum magna occaecat laboris aliquip aliqua laboris labore cupidatat ut id.",
+      label: "Blue",
+      value: "blue",
     },
   ];
+  console.log(selection);
   return (
-    <div>
-      <Accordion items={items} />
-    </div>
+    <Dropdown options={options} selection={selection} setOption={setOption} />
   );
 }
 

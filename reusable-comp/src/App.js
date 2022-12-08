@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 function App() {
   const [selection, setselection] = useState(null);
-  const setOption = (option) => {
+  const onSelect = (option) => {
     setselection(option);
   };
   const options = [
@@ -22,7 +22,7 @@ function App() {
   ];
   console.log(selection);
   return (
-    <Dropdown options={options} selection={selection} setOption={setOption} />
+    <Dropdown options={options} selection={selection} onSelect={onSelect} />
   );
 }
 

@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
-const Dropdown = ({ options, setOption, selection }) => {
+const Dropdown = ({ options, onSelect, selection }) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+  const domEl = useRef();
+
+  useEffect(() => {
+    const handler = (event) => {
+      // console.log(event.target);
+      if (!domEl.current.contains(event.target)) setIsOpen(false);
+    };
+    document.addEventListener("click", handler, true);
+  }, []);
+
   const handleOptionClick = (option) => {
     setIsOpen(false);
-    setOption(option);
+    onSelect(option);
     // setSelect(option);
   };
   const renderOptions = options.map((option) => {
@@ -19,7 +29,7 @@ const Dropdown = ({ options, setOption, selection }) => {
   });
 
   return (
-    <div>
+    <div ref={domEl} className="w-48 relative">
       <div onClick={handleClick}>{selection?.label || "Select..."}</div>
       {isOpen && <div>{renderOptions}</div>}
     </div>

@@ -1,12 +1,22 @@
-import React from "react";
+import React, { Fragment } from "react";
 
-const Table = ({ tableData, config, keyFn }) => {
+const Table = ({ data, config, keyFn }) => {
+  // rendering Table Headers
   const renderHeaders = config.map((column, index) => {
+    if (column.header) {
+      return <Fragment key={column.label}>{column.header()}</Fragment>;
+    }
     return <th key={index}>{column.label}</th>;
   });
-  const renderedRows = tableData.map((rowData) => {
+
+  // Rendering Table rows & columns
+  const renderedRows = data.map((rowData) => {
     const renderCells = config.map((column) => {
-      return <td className="p-2">{column.render(rowData)}</td>;
+      return (
+        <td className="p-2" key={column.label}>
+          {column.render(rowData)}
+        </td>
+      );
     });
     return (
       <tr className="border-b" key={keyFn(rowData)}>
@@ -14,6 +24,7 @@ const Table = ({ tableData, config, keyFn }) => {
       </tr>
     );
   });
+
   return (
     <table className="table-auto border-spacing-2">
       <thead>

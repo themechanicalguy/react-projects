@@ -1,5 +1,6 @@
 import React from "react";
-import Table from "../components/Table";
+import SortableTable from "../components/SortableTable";
+// import Table from "../components/Table";
 
 const TablePage = () => {
   const datum = [
@@ -26,12 +27,20 @@ const TablePage = () => {
   ];
 
   const config = [
-    { label: "Name", render: (fruit) => fruit.name },
+    {
+      label: "Name",
+      render: (fruit) => fruit.name,
+      sortValue: (fruit) => fruit.name,
+    },
     {
       label: "Color",
       render: (fruit) => <div className={` p-3 m-2 ${fruit.color}`} />,
     },
-    { label: "Score", render: (fruit) => fruit.score },
+    {
+      label: "Score",
+      render: (fruit) => fruit.score,
+      sortValue: (fruit) => fruit.score,
+    },
   ];
   const keyFn = (fruit) => {
     return fruit.name;
@@ -39,7 +48,8 @@ const TablePage = () => {
 
   return (
     <div>
-      <Table tableData={datum} config={config} keyFn={keyFn} />
+      {/* <Table tableData={datum} config={config} keyFn={keyFn} /> */}
+      <SortableTable data={datum} config={config} keyFn={keyFn} />
     </div>
   );
 };

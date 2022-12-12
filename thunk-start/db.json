@@ -1,5 +1,42 @@
 {
-  "users": [],
+  "users": [
+    {
+      "id": 1,
+      "name": "myra"
+    },
+    {
+      "name": "Darin Carroll",
+      "id": 2
+    },
+    {
+      "name": "Mr. Dan Schaefer Sr.",
+      "id": 3
+    },
+    {
+      "name": "Courtney Hilll",
+      "id": 4
+    },
+    {
+      "name": "Casey Raynor",
+      "id": 5
+    },
+    {
+      "name": "Miss Tracey Graham",
+      "id": 6
+    },
+    {
+      "name": "Jean Huel",
+      "id": 7
+    },
+    {
+      "name": "May Volkman",
+      "id": 8
+    },
+    {
+      "name": "Alison Schuster",
+      "id": 9
+    }
+  ],
   "albums": [],
   "photos": []
 }

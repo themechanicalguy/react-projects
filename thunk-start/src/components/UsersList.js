@@ -7,12 +7,8 @@ import { useThunk } from "../hooks/use-thunk";
 import UsersListItem from "./UsersListItem";
 
 const UsersList = () => {
-  //PREVIEW
   const [doFetchUsers, isLoadingUsers, loadingUsersError] = useThunk(fetchUser);
   const [doCreateUser, isCreatingUser, creatingUserError] = useThunk(addUser);
-  // const [isCreatingUser, setIsCreatingUser] = useState(false);
-  // const [CreatingUserError, setCreatingUserError] = useState(null);
-  // const dispatch = useDispatch();
   const { data } = useSelector((state) => {
     return state.users;
   });
@@ -25,13 +21,6 @@ const UsersList = () => {
     doCreateUser();
   };
 
-  if (isLoadingUsers) {
-    return <Skeleton times={6} className="h-10 w-full" />;
-  }
-  if (loadingUsersError) {
-    return <div>Error Fetching Data</div>;
-  }
-
   let content;
   if (isLoadingUsers) {
     content = <Skeleton times={6} className="h-10 w-full" />;
@@ -40,13 +29,6 @@ const UsersList = () => {
   } else {
     content = data.map((user) => {
       return <UsersListItem key={user.id} user={user} />;
-      // return (
-      //   <div key={user.id} className="mb-2 border rounded">
-      //     <div className="flex p-2 justify-between items-center cursor-pointer">
-      //       {user.name}
-      //     </div>
-      //   </div>
-      // );
     });
   }
   return (

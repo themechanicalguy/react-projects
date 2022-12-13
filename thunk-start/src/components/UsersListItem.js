@@ -5,7 +5,9 @@ import { useThunk } from "../hooks/use-thunk";
 
 const UsersListItem = ({ user }) => {
   const [doRemoveUser, isLoading, error] = useThunk(removeUser);
+  console.log(doRemoveUser);
   const handleClick = () => {
+    console.log(user);
     doRemoveUser(user);
   };
   return (
@@ -15,7 +17,7 @@ const UsersListItem = ({ user }) => {
           <Button loading={isLoading} onClick={handleClick}>
             <GoTrashcan />
           </Button>
-          {error && <div>Error deleting user</div>}
+          {error && <div>error</div>}
           {user.name}
         </div>
       </div>

@@ -1,24 +1,20 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "myra"
-    },
-    {
-      "name": "Adrienne Hamill",
-      "id": 2
-    },
-    {
-      "name": "Eva McLaughlin",
-      "id": 3
-    },
-    {
-      "name": "Harvey Roberts",
-      "id": 4
-    },
-    {
       "name": "Mrs. Lorena Herman",
       "id": 5
+    },
+    {
+      "name": "Faith Sauer",
+      "id": 6
+    },
+    {
+      "name": "Mitchell Stokes",
+      "id": 7
+    },
+    {
+      "name": "Jessica Little",
+      "id": 8
     }
   ],
   "albums": [],

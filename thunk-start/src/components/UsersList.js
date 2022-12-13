@@ -38,7 +38,7 @@ const UsersList = () => {
         <Button loading={isCreatingUser} onClick={handleUserAdd}>
           + Add User
         </Button>
-        {creatingUserError && "Error Creating User..."}
+        {creatingUserError && "Error Creating User"}
       </div>
       {content}
     </div>

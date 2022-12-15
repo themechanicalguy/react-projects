@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 
 const Table = ({ data, config, keyFn }) => {
   // rendering Table Headers

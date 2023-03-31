@@ -1,0 +1,21 @@
+.header {
+  justify-content: space-between;
+  display: flex;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.nav-links {
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  padding: 20px;
+}
+
+/*# sourceMappingURL=index.a0bde794.css.map */

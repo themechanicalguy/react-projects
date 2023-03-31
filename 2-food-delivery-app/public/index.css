@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  width: 100px;
+  height: 100px;
+}
+.nav-links {
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+}
+.nav-links li {
+  padding: 20px;
+}

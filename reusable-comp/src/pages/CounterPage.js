@@ -94,7 +94,7 @@ const CounterPage = ({ initialCount }) => {
     count: initialCount,
     valueToAdd: 0,
   });
-  console.log(state);
+
   const increment = () => {
     // state.count;
     // setCount(count + 1);

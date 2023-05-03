@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { changeName, changeCost, addCar } from "../store";
+import { addCar } from "../store/slices/carsSlice";
+import { changeName, changeCost } from "../store/slices/formSlice";
 
 const CarForm = () => {
   const disptach = useDispatch();
@@ -21,6 +22,7 @@ const CarForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(name, cost);
 
     disptach(addCar({ name, cost }));
   };

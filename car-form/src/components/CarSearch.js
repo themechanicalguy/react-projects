@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import { changeSearchTerm } from "../store";
+import { changeSearchTerm } from "../store/slices/carsSlice";
 
-const carSearch = () => {
+const CarSearch = () => {
   const dispatch = useDispatch();
   const searchTerm = useSelector((state) => {
     return state.cars.searchTerm;
@@ -26,4 +26,4 @@ const carSearch = () => {
   );
 };
 
-export default carSearch;
+export default CarSearch;

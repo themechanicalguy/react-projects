@@ -11,8 +11,8 @@ const usersSlice = createSlice({
     error: null,
   },
   extraReducers(builder) {
+    // fetch user data
     builder.addCase(fetchUser.pending, (state, action) => {
-      //update our state object however appropriate to show thw user what we are loading data
       state.isLoading = true;
     });
     builder.addCase(fetchUser.fulfilled, (state, action) => {
@@ -24,6 +24,7 @@ const usersSlice = createSlice({
       state.error = action.error;
     });
 
+    // add new user
     builder.addCase(addUser.pending, (state, action) => {
       state.isLoading = true;
     });
@@ -36,6 +37,7 @@ const usersSlice = createSlice({
       state.error = action.error;
     });
 
+    // remove user
     builder.addCase(removeUser.pending, (state, action) => {
       state.isLoading = true;
     });

@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import ClassNames from "classnames";
 
 import React from "react";
 

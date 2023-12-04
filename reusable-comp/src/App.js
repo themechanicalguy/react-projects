@@ -6,14 +6,16 @@ import ModalPage from "./pages/ModalPage.js";
 import Sidebar from "./components/Sidebar.js";
 import TablePage from "./pages/TablePage";
 import CounterPage from "./pages/CounterPage.js";
+import Carousel from "./components/Carousel.js";
 
 function App() {
   return (
     <div>
-      <div className="container mx-auto grid-cols-4 gap-4 mt-4  ">
+      <Carousel />
+      {/* <div className="container mx-auto grid-cols-4 gap-4 mt-4  ">
         <Sidebar />
-      </div>
-      <div className="col-span-5 grid-cols-8">
+      </div> */}
+      {/* <div className="col-span-5 grid-cols-8">
         <Route path="/accordion">
           <AccordionPage />
         </Route>
@@ -32,7 +34,7 @@ function App() {
         <Route path="/counter">
           <CounterPage initialCount={10} />
         </Route>
-      </div>
+      </div> */}
     </div>
   );
 }
